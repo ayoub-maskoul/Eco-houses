@@ -1,0 +1,40 @@
+[
+    {
+        "categorie" : "electricity",
+        "src" : "..\\images\\Turn_off unnecessary_lights.png",
+        "titre" : "Turn off unnecessary lights",
+        "desc" : "Two 100-watt incandescent bulbs switched off an extra two hours per day could save you 150DH over a year. Better yet, switch to LED.",
+        "save" : "Save 150DH"
+    },
+    {
+        "categorie" : "electricity",
+        "src" : "..\\images\\daylight-empty-office-full-width-place.jpg",
+        "titre" : "Use natural light",
+        "desc" : "A single south-facing window can illuminate 20 to 100 times its area. Turning off one 60-watt bulb for four hours a day is a 90DH saving over a year.",
+        "save" : "Save 90DH"
+    },
+    {
+        "categorie" : "electricity",
+        "src" : "..\\images\\woman-and-boy-homework-task-lighting-people.jpg.thumb.90.140.png",
+        "titre" : "Use task lighting",
+        "desc" : "Turn off ceiling lights and use table lamps, track lighting and under-counter lights in work and hobby areas as well as in kitchens.",
+        "save" : "Save 60DH"
+    },
+    
+    {
+        "categorie" : "Water",
+        "src" : "..\\images\\wateer.png",
+        "titre" : "Wash laundry in cold",
+        "desc" : "By switching from hot to cold water for an average of three loads per week, you could save up to 220 per year on your energy bill.",
+        "save" : "Save 220DH"
+    },
+    {
+        "categorie" : "Air",
+        "src" : "..\\images\\air.jpg",
+        "titre" : "Not home? Turn off the air conditioner",
+        "desc" : "Turn off that old window unit air conditioner for five hours a day while you're away. Do that for 60 days over a summer and you'll save 106.",
+        "save" : "Save 100DH"
+    }
+    
+    
+]

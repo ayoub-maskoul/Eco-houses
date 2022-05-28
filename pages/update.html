@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar ">
+            <a class="img-fluid" href="../index.html"><img src="../images/logo 1.png" alt=""></a></a>
+            <ul>
+                <li><a href="../index.html">Home</a> </li>
+                <li><a href="./update.html">Update</a></li>
+                <li><a href="./Build.html">Build</a></li>
+                <li><a href="./cntact.html">contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <!--statique form -->
+    <div >
+        <div class="container mt-5 ">
+            <div class="row ">
+                <div class="col-12">
+                    <label class="d-block mt-2">Type</label>
+                    <select name="vil" onchange="chargerFichier()" id="vil" class="mt-1 form-control">
+                        <option value="none" disabled selected>Choose</option>
+                        <option value="electricity">Electricity</option>
+                        <option value="Water">Water</option>
+                        <option value="Air">Air</option>
+                        
+                    </select>
+                </div>
+                <div class="container mt-5" id="datos">
+                    
+                </div>
+            </div>
+            <div class=" text-center mt-3">
+                <input type="submit" value="Advice me" class="form-control btn btn-success">
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+    <footer >
+        <div class="container">
+            <div class="sub row ">
+                <label class="col-lg-4 col-12">Subscribe Newsletters</label>
+                <div class="con col-lg-8 col-12">
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <input type="button" value="Subcribe Now" >
+                </div>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="../index.html">Home</a> </li>
+                    <li><a href="update.html">Update</a></li>
+                    <li><a href="Build.html">Build</a></li>
+                    <li><a href="cntact.html">contact</a></li>
+                </ul>
+                <ul>
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-youtube"></i></li>
+                </ul>
+            </div>
+            <div class="d-flex justify-content-around my-4">
+                <img src="../images/logo 1.png" alt="">
+                <span>Terms of Service</span>
+                <span>Privacy Policy</span>
+            </div>
+        </div>
+    </footer>
+            <script>
+                function chargerFichier(){
+                    const req = new XMLHttpRequest()
+                    req.open("GET","./../data.json",true)
+                    req.send()
+                    req.onload = function(){
+                        let data = JSON.parse(req.response)
+                        insertInto(data)
+                    }
+                }
+                function insertInto(data){
+                    const dataInfo = document.getElementById("datos")
+                    const select = document.getElementById("vil").value;
+                    let info = '<div>'
+                    for (const item of data) {
+                        if (item.categorie === select){
+                            info += `
+                            <div class="card mb-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="${item.src}" class="img-fluid -10" style =" height: 200px; width:300px;">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${item.titre}</h5>
+                                            <p class="card-text">${item.desc}</p>
+                                            <p class="card-text"><small class="text-muted">${item.save}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+                        }
+                    }
+                    dataInfo.innerHTML = ""
+                    dataInfo.innerHTML = info + '</div>'
+                }
+            </script>
+</body>
+</html>
